@@ -1,0 +1,16 @@
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Inizializando serial");
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  while(Serial.available()>0){
+    if(String(Serial.readString()) == "ON"){
+      analogWrite(13, 250);
+      Serial.println("ON");
+    }
+  }
+  delay(100);
+}
